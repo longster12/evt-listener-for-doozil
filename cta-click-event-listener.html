@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CTA event handler</title>
+</head>
+
+<body>
+<style>
+    .event-listener {
+        margin: auto;
+        width: 100%;
+    }
+    .hide {
+        display: none;
+    }
+    .event-listener__cta {
+        padding: 5px;
+        border: solid grey 2px;
+        color: darkgrey;
+    }
+    .event-listener__alert {
+        width: 50%;
+        background: darkred;
+        color: white;
+        diplay: block;
+        padding: 20px;
+    }
+</style>
+<div class="event-listener">
+    <div class="event-listener__cta hide">
+        <a class="" href="#">Click me </a>
+    </div>
+
+    <div class="event-listener__alert hide">
+
+        <h2>ALERT </h2>
+
+        <p>luh iuh oiushdcoiuas docuigy woduc gouio wdcu u</p>
+    </div>
+</div>
+<script>
+    const CTA = document.querySelector('.event-listener__cta');
+    const ALERT = document.querySelector('.event-listener__alert');
+
+    CTA.classList.remove('hide');
+    ALERT.classList.add('hide');
+
+    function reveal(e) {
+        e.preventDefault();
+        CTA.classList.toggle('hide');
+        ALERT.classList.toggle('hide');
+    }
+    CTA.addEventListener("click", reveal, false);
+    ALERT.addEventListener("click", reveal, false);
+</script>
+
+
+</body>
+</html>
